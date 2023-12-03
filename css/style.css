@@ -29,7 +29,6 @@
     right: 20px;
     bottom: 20px;
     text-align: right;
-    color: white;
 }
 
 .thumbs {
@@ -102,4 +101,8 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     bottom: 35%;
     left: 50%;
     transform: translate(-50%) rotate(135deg);
+}
+
+.txt-pink{
+    color: magenta;
 }

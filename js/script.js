@@ -11,9 +11,6 @@
 
 
 
-console.log(slides);
-
-
 const { createApp } = Vue;
 
 createApp({
@@ -41,39 +38,35 @@ createApp({
                     title: "Marvel's Avengers",
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 }
-        ],
-            activeIndex: 0,
-            title: 'The Mandalorian',
-            description: 'The Mandalorian is a Mandalorian in the Mandalorians who mandalores the mandalore',
-            categories: [
-                'Action',
-                'Sci-fi',
-                'Star Wars',
             ],
+            activeIndex: 0,
+            pathimg : 'img/01.webp', // the path to the image
+            titleimg : 'Marvel\'s Spiderman Miles Morale',
+            textimg : 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+
         }
     },
-    methods: {
-        changeSlideTo(index){
-            if (index >= this.images.length || index < 0 ){
-                return false;
-            }
 
-            this.activeIndex = index;
-        },
+    methods: {
+
         nextSlide(){
             this.activeIndex = this.activeIndex + 1;
-            if (this.activeIndex >= this.images.length){
+            if (this.activeIndex >= this.slides.length){
                 this.activeIndex = 0;
             }
-            console.log(this.activeIndex)
+            this.pathimg = this.slides[this.activeIndex].image
+            this.titleimg = this.slides[this.activeIndex].title
+            this.textimg = this.slides[this.activeIndex].text
+            console.log(this.textimg)
         },
 // CORRETTO DA AMIN
         prevSlide(){
             this.activeIndex = this.activeIndex - 1;
             if (this.activeIndex < 0){
-                this.activeIndex = this.images.length -1;
+                this.activeIndex = this.slides.length -1;
             }
-            console.log(this.activeIndex)
+            this.pathimg = this.slides[this.activeIndex].image
+            this.titleimg = this.slides[this.activeIndex].title
         },
 
     },
